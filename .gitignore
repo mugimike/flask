@@ -1,0 +1,14 @@
+venv/
+
+*.pyc
+__pycache__/
+
+instance/
+
+.pytest_cache/
+.conerage
+htmlcov/
+
+dist/
+build/
+*.egg-ingo/
