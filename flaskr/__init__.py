@@ -1,6 +1,9 @@
 import os
 
 from flask import Flask
+from flask_socketio import SocketIO
+
+#socketio = SocketIO()
 
 def create_app(test_config=None):
     # create and configure the app
@@ -23,11 +26,6 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a sample page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
-
     from . import db
     db.init_app(app)
 
@@ -38,4 +36,5 @@ def create_app(test_config=None):
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
 
+    #socketio.init_app(app)
     return app
